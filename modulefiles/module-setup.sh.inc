@@ -59,9 +59,10 @@ elif [[ -d /dcom && -d /hwrf ]] ; then
     module purge
 elif [[ -L /usrx && "$( readlink /usrx 2> /dev/null )" =~ dell ]] ; then
     # We are on NOAA Mars or Venus
-    if ( ! eval module help > /dev/null 2>&1 ) ; then
-	source /usrx/local/prod/lmod/lmod/init/$__ms_shell
-    fi
+ #JW   if ( ! eval module help > /dev/null 2>&1 ) ; then
+ #JW	source /usrx/local/prod/lmod/lmod/init/$__ms_shell
+    . /usrx/local/Modules/default/init/ksh  > /dev/null 2>&1
+ #JW   fi
     module purge
 elif [[ -d /glade ]] ; then
     # We are on NCAR Yellowstone
