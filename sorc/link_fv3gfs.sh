@@ -15,18 +15,18 @@ fi
 
 if [ $# -lt 2 ]; then
     echo '***ERROR*** must specify two arguements: (1) RUN_ENVIR, (2) machine'
-    echo ' Syntax: link_fv3gfs.sh ( nco | emc ) ( cray | dell | theia | hera | orion )'
+    echo ' Syntax: link_fv3gfs.sh ( nco | emc ) ( cray | dell | theia | hera | orion |wcoss )'
     exit 1
 fi
 
 RUN_ENVIR=${1:-emc}
 
 if [ $RUN_ENVIR != emc -a $RUN_ENVIR != nco ]; then
-    echo 'Syntax: link_fv3gfs.sh ( nco | emc ) ( cray | dell | theia | hera | orion )'
+    echo 'Syntax: link_fv3gfs.sh ( nco | emc ) ( cray | dell | theia | hera | orion | wcoss )'
     exit 1
 fi
 if [ $machine != cray -a $machine != theia -a $machine != dell -a $machine != hera -a $machine != orion]; then
-    echo 'Syntax: link_fv3gfs.sh ( nco | emc ) ( cray | dell | theia | hera | orion )'
+    echo 'Syntax: link_fv3gfs.sh ( nco | emc ) ( cray | dell | theia | hera | orion | wcoss )'
     exit 1
 fi
 
@@ -53,11 +53,14 @@ elif [ $target == "jet" ]; then
     FIX_DIR="/lfs3/projects/hfv3gfs/glopara/git/fv3gfs/fix"
 elif [ $target == "hera" ]; then
     FIX_DIR="/scratch1/NCEPDEV/global/glopara/fix"
+elif [ $machine = "wcoss" ]; then   #JW
+    FIX_DIR="/gpfs/dell2/emc/modeling/noscrub/emc.glopara/git/fv3gfs/fix"
 else
     echo 'CRITICAL: links to fix files not set'
     [[ $machine != orion ]] && exit 1
 fi
 
+mkdir -p ${pwd}/../fix
 cd ${pwd}/../fix                ||exit 8
 for dir in fix_am fix_fv3 fix_orog fix_fv3_gmted2010 fix_verif ; do
     [[ -d $dir ]] && rm -rf $dir
@@ -371,6 +374,9 @@ if [ $model = "coupled" ] ; then
  CPLFIX_DIR="/scratch4/NCEPDEV/nems/save/Bin.Li/fix_prep_benchmark2"
  elif [ $machine = "hera" ] ; then
  CPLFIX_DIR="/scratch2/NCEPDEV/climate/Bin.Li/S2S/fix/fix_prep_benchmark3"
+ elif [ $machine = "wcoss" ]; then   #JW 
+ #CPLFIX_DIR="/gpfs/td1/emc/global/noscrub/Jiande.Wang/WF3/fix_prep_benchmark3"
+ CPLFIX_DIR="/gpfs/gd1/emc/global/noscrub/Jiande.Wang/WF3/fix_prep_benchmark3"
  fi
 cd $pwd/../fix
 # Add fixed files needed for coupled fv3-mom6-cice5
