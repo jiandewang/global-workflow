@@ -592,6 +592,7 @@ MOM6_postdet()
         else 
           $NCP -pf $HOMEgfs/parm/mom6/MOM_input_$OCNRES $DATA/INPUT/MOM_input 
         fi 
+        $NCP -pf /work/noaa/marine/Jiande.Wang/For-others/For-Xu/work/interpolate_zgrid_40L-top-enhanced.nc $DATA/INPUT/interpolate_zgrid_40L.nc
         #TODO: update to make MOM_input configurable 
 
 	# Copy coupled grid_spec

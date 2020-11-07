@@ -7,8 +7,8 @@
 "fv3_history",    0,  "hours",  1,  "hours",  "time"
 "fv3_history2d",  0,  "hours",  1,  "hours",  "time"
 ######################
-"ocn%4yr%2mo%2dy%2hr",      6,  "hours", 1, "hours", "time", 6, "hours", "1901 1 1 0 0 0"
-"ocn_daily%4yr%2mo%2dy",      1,  "days",  1, "days",  "time", 1, "days",  "1901 1 1 0 0 0"
+"ocn%4yr%2mo%2dy%2hr",            1,  "hours",  1, "hours",  "time", 1, "hours", "1901 1 1 0 0 0"
+"ocn_daily%4yr%2mo%2dy%2hr",      1,  "hours",  1, "hours",  "time", 1, "hours", "1901 1 1 0 0 0"
 "wavocn%4yr%2mo%2dy%2hr",      6,  "hours", 1, "hours", "time", 6, "hours", "1901 1 1 0 0 0"
 ##############################################
 # static fields
@@ -40,24 +40,24 @@
  "ocean_model", "MLD_003",  "MLD_003",  "ocn%4yr%2mo%2dy%2hr","all",.true.,"none",2
  "ocean_model", "MLD_0125", "MLD_0125", "ocn%4yr%2mo%2dy%2hr","all",.true.,"none",2
 
-# save daily SST
- "ocean_model", "geolon",      "geolon",      "ocn_daily%4yr%2mo%2dy", "all", .false., "none", 2
- "ocean_model", "geolat",      "geolat",      "ocn_daily%4yr%2mo%2dy", "all", .false., "none", 2
- "ocean_model", "geolon_c",    "geolon_c",    "ocn_daily%4yr%2mo%2dy", "all", .false., "none", 2
- "ocean_model", "geolat_c",    "geolat_c",    "ocn_daily%4yr%2mo%2dy", "all", .false., "none", 2
- "ocean_model", "geolon_u",    "geolon_u",    "ocn_daily%4yr%2mo%2dy", "all", .false., "none", 2
- "ocean_model", "geolat_u",    "geolat_u",    "ocn_daily%4yr%2mo%2dy", "all", .false., "none", 2
- "ocean_model", "geolon_v",    "geolon_v",    "ocn_daily%4yr%2mo%2dy", "all", .false., "none", 2
- "ocean_model", "geolat_v",    "geolat_v",    "ocn_daily%4yr%2mo%2dy", "all", .false., "none", 2
- "ocean_model", "SST",         "sst",         "ocn_daily%4yr%2mo%2dy", "all", .true.,  "none", 2
- "ocean_model", "latent",      "latent",      "ocn_daily%4yr%2mo%2dy","all",.true.,"none",2
- "ocean_model", "sensible",    "sensible",    "ocn_daily%4yr%2mo%2dy","all",.true.,"none",2
- "ocean_model", "SW",          "SW",          "ocn_daily%4yr%2mo%2dy","all",.true.,"none",2
- "ocean_model", "LW",          "LW",          "ocn_daily%4yr%2mo%2dy","all",.true.,"none",2
- "ocean_model", "evap",        "evap",        "ocn_daily%4yr%2mo%2dy","all",.true.,"none",2
- "ocean_model", "lprec",       "lprec",       "ocn_daily%4yr%2mo%2dy","all",.true.,"none",2
- "ocean_model", "taux",        "taux",        "ocn_daily%4yr%2mo%2dy","all",.true.,"none",2
- "ocean_model", "tauy",        "tauy",        "ocn_daily%4yr%2mo%2dy","all",.true.,"none",2
+# save surface variables 
+ "ocean_model", "geolon",      "geolon",      "ocn_daily%4yr%2mo%2dy%2hr", "all", .false., "none", 2
+ "ocean_model", "geolat",      "geolat",      "ocn_daily%4yr%2mo%2dy%2hr", "all", .false., "none", 2
+ "ocean_model", "geolon_c",    "geolon_c",    "ocn_daily%4yr%2mo%2dy%2hr", "all", .false., "none", 2
+ "ocean_model", "geolat_c",    "geolat_c",    "ocn_daily%4yr%2mo%2dy%2hr", "all", .false., "none", 2
+ "ocean_model", "geolon_u",    "geolon_u",    "ocn_daily%4yr%2mo%2dy%2hr", "all", .false., "none", 2
+ "ocean_model", "geolat_u",    "geolat_u",    "ocn_daily%4yr%2mo%2dy%2hr", "all", .false., "none", 2
+ "ocean_model", "geolon_v",    "geolon_v",    "ocn_daily%4yr%2mo%2dy%2hr", "all", .false., "none", 2
+ "ocean_model", "geolat_v",    "geolat_v",    "ocn_daily%4yr%2mo%2dy%2hr", "all", .false., "none", 2
+ "ocean_model", "SST",         "sst",         "ocn_daily%4yr%2mo%2dy%2hr", "all", .true.,  "none", 2
+ "ocean_model", "latent",      "latent",      "ocn_daily%4yr%2mo%2dy%2hr","all",.true.,"none",2
+ "ocean_model", "sensible",    "sensible",    "ocn_daily%4yr%2mo%2dy%2hr","all",.true.,"none",2
+ "ocean_model", "SW",          "SW",          "ocn_daily%4yr%2mo%2dy%2hr","all",.true.,"none",2
+ "ocean_model", "LW",          "LW",          "ocn_daily%4yr%2mo%2dy%2hr","all",.true.,"none",2
+ "ocean_model", "evap",        "evap",        "ocn_daily%4yr%2mo%2dy%2hr","all",.true.,"none",2
+ "ocean_model", "lprec",       "lprec",       "ocn_daily%4yr%2mo%2dy%2hr","all",.true.,"none",2
+ "ocean_model", "taux",        "taux",        "ocn_daily%4yr%2mo%2dy%2hr","all",.true.,"none",2
+ "ocean_model", "tauy",        "tauy",        "ocn_daily%4yr%2mo%2dy%2hr","all",.true.,"none",2
 
 # Z-Space Fields Provided for CMIP6 (CMOR Names):
 #===============================================
