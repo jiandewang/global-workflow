@@ -647,7 +647,8 @@ MOM6_out()
       	  # copy ocn files
   	  for fhr in $fhrlst; do
 	    export fhr=$fhr
-	    if [[ 10#$fhr -ge 6 ]]; then
+#JW	    if [[ 10#$fhr -ge 6 ]]; then
+            if [[ 10#$fhr -ge 0 ]]; then
        	      hh_inc_m=$((10#$FHOUT/2))
 	      hh_inc_o=$((10#$FHOUT  ))
 
