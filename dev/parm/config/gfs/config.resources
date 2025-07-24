@@ -856,9 +856,10 @@ case ${step} in
     # However, it is suggested limiting mediator PETS to 300, as it may cause the slow performance.
     # See https://docs.google.com/document/d/1bKpi-52t5jIfv2tuNHmQkYUe3hkKsiG_DG_s6Mnukog/edit
     # TODO: Update reference when moved to ufs-weather-model RTD
-    MEDTHREADS=${nthreads_mediator:-1}
-    MEDPETS=${MEDPETS:-${FV3PETS}}
-    (( "${MEDPETS}" > 300 )) && MEDPETS=300
+    #MEDTHREADS=${nthreads_mediator:-${nthreads_fv3}}
+    #MEDPETS=${MEDPETS:-${FV3PETS}}
+    (( MEDPETS = FV3PETS )) 
+    (( MEDTHREADS = FV3THREADS )) 
     export MEDPETS MEDTHREADS
     echo "MEDIATOR using (threads, PETS) = (${MEDTHREADS}, ${MEDPETS})"
 
