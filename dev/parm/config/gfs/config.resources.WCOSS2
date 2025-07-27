@@ -42,9 +42,9 @@ case ${step} in
     case "${CASE}" in
       "C1152" | "C768" | "C384")
         if [[ "${RUN}" = *gdas ]]; then
-          ntasks=315
+          export ntasks=315
         elif [[ "${RUN}" = *gfs ]]; then
-          ntasks=135
+          export ntasks=135
         fi
         export threads_per_task=14
         ;;
