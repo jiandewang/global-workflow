@@ -300,9 +300,9 @@ case "${fv3_res}" in
         elif [[ "${RUN}" = *gfs ]]; then
           export layout_x=32
           #export layout_y=64
-	  export layout_y=32
-	  export WRITE_GROUP=8
-	  export WRTTASK_PER_GROUP_PER_THREAD_PER_TILE=50
+          export layout_y=32
+          export WRITE_GROUP=8
+          export WRTTASK_PER_GROUP_PER_THREAD_PER_TILE=50
         elif [[ "${RUN}" = *gcafs ]]; then
           export layout_x=16
           export layout_y=24
@@ -581,7 +581,7 @@ if [[ "${skip_cice6}" == "false" ]]; then
       if [[ "${RUN}" = *gfs ]]; then
         ntasks_cice6=240
       elif [[ "${RUN}" = enkfgdas ]]; then
-	ntasks_cice6=40     
+        ntasks_cice6=40     
       else
         ntasks_cice6=40
       fi
