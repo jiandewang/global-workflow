@@ -299,9 +299,10 @@ case "${fv3_res}" in
           export layout_y=24
         elif [[ "${RUN}" = *gfs ]]; then
           export layout_x=32
-          export layout_y=64
+          #export layout_y=64
+	  export layout_y=32
 	  export WRITE_GROUP=8
-	  export WRTTASK_PER_GROUP_PER_THREAD_PER_TILE=60
+	  export WRTTASK_PER_GROUP_PER_THREAD_PER_TILE=50
         elif [[ "${RUN}" = *gcafs ]]; then
           export layout_x=16
           export layout_y=24
@@ -497,7 +498,7 @@ if [[ "${skip_mom6}" == "false" ]]; then
       if [[ "${RUN}" = enkfgdas ]]; then
         ntasks_mom6=160 	      
       elif [[ "${RUN}" = *gdas ]]; then
-        ntasks_mom6=200 
+        ntasks_mom6=100 
       elif [[ "${RUN}" = *gfs ]]; then
         ntasks_mom6=240 
       else
@@ -582,7 +583,7 @@ if [[ "${skip_cice6}" == "false" ]]; then
       elif [[ "${RUN}" = enkfgdas ]]; then
 	ntasks_cice6=40     
       else
-        ntasks_cice6=80
+        ntasks_cice6=40
       fi
       cice6_processor_shape="slenderX2"
       ;;
@@ -627,10 +628,10 @@ if [[ "${skip_ww3}" == "false" ]]; then
       ntasks_ww3=80
       ;;
     "uglo_15km")
-      ntasks_ww3=1000
+      ntasks_ww3=884
       if [[ "${RUN}" = *gfs ]]; then
         ntasks_ww3=3000
-        nthreads_ww3=2
+        nthreads_ww3=1
       fi 
       ;;
     "uglo_100km")

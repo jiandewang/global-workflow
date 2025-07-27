@@ -783,7 +783,7 @@ case ${step} in
   "sfcanl")
     walltime="00:20:00"
     ntasks=${ntiles:-6}
-    threads_per_task=1
+    threads_per_task=4
     tasks_per_node=$(( max_tasks_per_node / threads_per_task ))
     export is_exclusive=True
     ;;
@@ -860,6 +860,7 @@ case ${step} in
     #MEDPETS=${MEDPETS:-${FV3PETS}}
     (( MEDPETS = FV3PETS )) 
     (( MEDTHREADS = FV3THREADS )) 
+    (( "${MEDPETS}" > 24000 )) && MEDPETS=16000
     export MEDPETS MEDTHREADS
     echo "MEDIATOR using (threads, PETS) = (${MEDTHREADS}, ${MEDPETS})"
 
