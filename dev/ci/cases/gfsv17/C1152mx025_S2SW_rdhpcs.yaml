@@ -13,10 +13,10 @@ arguments:
   start: warm
   comroot: {{ 'RUNTESTS' | getenv }}/COMROOT
   expdir: {{ 'RUNTESTS' | getenv }}/EXPDIR
-  idate: 2024111506
-  edate: 2024111600
+  idate: 2025051506 
+  edate: 2025061600
   #gaea
-  icsdir: /gpfs/f6/drsa-precip3/world-shared/role.glopara/data/ICSDIR/retro_ICs
+  icsdir: /gpfs/f6/gfs-cpu/world-shared/Jessica.Meixner/RETRO_GFSv17/IC/v2 
   #msu
   #icsdir: /work2/noaa/global/role-global/data/ICSDIR/retro_ICs
   yaml: {{ HOMEgfs }}/dev/ci/cases/gfsv17/s2sw.yaml
