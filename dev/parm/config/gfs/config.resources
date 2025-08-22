@@ -45,6 +45,10 @@ case ${machine} in
               max_tasks_per_node=40
               mem_node_max="96GB"
     ;;
+  "URSA")
+              max_tasks_per_node=192
+              mem_node_max="360GB"
+    ;;
   "GAEAC5")
               max_tasks_per_node=128
               mem_node_max="251GB"
@@ -856,9 +860,9 @@ case ${step} in
     # However, it is suggested limiting mediator PETS to 300, as it may cause the slow performance.
     # See https://docs.google.com/document/d/1bKpi-52t5jIfv2tuNHmQkYUe3hkKsiG_DG_s6Mnukog/edit
     # TODO: Update reference when moved to ufs-weather-model RTD
-    #MEDTHREADS=${nthreads_mediator:-${nthreads_fv3}}
-    #MEDPETS=${MEDPETS:-${FV3PETS}}
-    (( MEDPETS = FV3PETS )) 
+    MEDTHREADS=${nthreads_mediator:-1}
+    MEDPETS=${MEDPETS:-${FV3PETS}}
+    (( MEDPETS = FV3PETS ))
     (( MEDTHREADS = FV3THREADS )) 
     (( "${MEDPETS}" > 24000 )) && MEDPETS=1200
     export MEDPETS MEDTHREADS
@@ -1038,7 +1042,7 @@ case ${step} in
     ntasks=1
     threads_per_task=1
     tasks_per_node=1
-    memory="5G"
+    memory="10G"
     ;;
 
   "vminmon")
@@ -1081,7 +1085,7 @@ case ${step} in
     case "${CASE_HIST}" in
       "C768")
         memory="200GB"
-        walltime="00:40:00"
+	walltime="00:40:00"
         ;;
       "C1152")
         memory="400GB"

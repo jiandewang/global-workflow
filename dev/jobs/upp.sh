@@ -44,7 +44,9 @@ if [[ "${MACHINE_ID}" == "wcoss2" ]]; then
 else
   source "${HOMEgfs}/dev/ush/load_fv3gfs_modules.sh"
   status=$?
-  if (( status != 0 )); then exit "${status}"; fi
+  if [[ ${status} -ne 0 ]]; then
+     exit "${status}";
+  fi
 fi
 
 export job="upp"
