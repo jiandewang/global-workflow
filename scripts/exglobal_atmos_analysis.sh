@@ -905,7 +905,7 @@ OBS_INPUT::
    abibufr        abi         g16         abi_g16             0.0     1     0
    abibufr        abi         g17         abi_g17             0.0     1     0
    abibufr        abi         g18         abi_g18             0.0     1     0
-   abibufr        abi         g19         abi_g19             0.0     1     0
+#   abibufr        abi         g19         abi_g19             0.0     1     0
    rapidscatbufr  uv          null        uv                  0.0     0     0
    ompsnpbufr     ompsnp      npp         ompsnp_npp          0.0     0     0
    ompslpbufr     ompslp      npp         ompslp_npp          0.0     0     0
