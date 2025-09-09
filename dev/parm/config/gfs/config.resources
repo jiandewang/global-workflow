@@ -1321,7 +1321,7 @@ case ${step} in
   "epos")
     walltime="00:15:00"
     if [[ "${CASE_HIST}" == "C768" || "${CASE_HIST}" == "C1152" ]]; then
-        walltime="00:25:00"
+        walltime="00:35:00"
     fi
     ntasks=80
     threads_per_task=1
